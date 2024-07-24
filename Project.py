@@ -11,10 +11,22 @@ while True:
             
         except Exception as e:
             print("An unknown error occurred, please try again")
+            
+    def view_file():
+    
+        if not files:
+            print("No Files Found")
+            
+        else:
+            files = os.listdir()
+            for f in files:
+                print(f"Files in Directory: {f}")
         
     def Read_File():
-            
+        
+        print(f"Existing Files in Directory {os.listdir()}")   
         try:
+            
             filename = str(input("Enter the filename to read: "))
             file = open(filename, 'r')
             print(f"Content in file: \n {file.read()}")
@@ -49,22 +61,11 @@ while True:
         except Exception as e:
             print("An unknown error occurred, please try again")
             
-    def view_file():
-        
-        if not files:
-            print("No Files Found")
-            
-        else:
-            files = os.listdir()
-            for f in files:
-                print(f"Files in Directory: {f}")
+
                 
     break
         
-        
-
-        
-
+    
 # Choices
 while True:
     print("1. Create a new File")
@@ -75,8 +76,12 @@ while True:
     
     try:
         Input = int(input("Enter Opration choice to Perform: "))
+  
+    except ValueError:
+        print("Invalid Input, please try again")
     except Exception as e:
         print("Invalid Input, Try again.")
+    
     match Input:
         
         case 1:
@@ -93,3 +98,6 @@ while True:
             
         case 5:
             view_file()
+            
+        case 6:
+            print("Invalid Choice")

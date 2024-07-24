@@ -72,9 +72,11 @@ while True:
     print("3. Edit a File")
     print("4. Delete a File")
     print("5. View all Files on Directory")
-
-    Input = int(input("Enter Opration choice to Perform: "))
-
+    
+    try:
+        Input = int(input("Enter Opration choice to Perform: "))
+    except Exception as e:
+        print("Invalid Input, Try again.")
     match Input:
         
         case 1:

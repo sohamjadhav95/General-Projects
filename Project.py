@@ -26,3 +26,31 @@ def view_file():
     files = os.listdir()
     for f in files:
         print(f"Files in Directory: {files}")
+        
+
+# Choices
+
+print("1. Create a new File")
+print("2. Read a File")
+print("3. Edit a File")
+print("4. Delete a File")
+print("5. View all Files on Directory")
+
+Input = int(input("Enter Opration choice to Perform: "))
+
+match Input:
+    
+    case 1:
+        Create_File()
+    
+    case 2:
+        Read_File()
+        
+    case 3:
+        Edit_File()
+        
+    case 4:
+        Delete_File()
+        
+    case 5:
+        view_file()
